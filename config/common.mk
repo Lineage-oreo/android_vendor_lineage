@@ -171,6 +171,11 @@ PRODUCT_PACKAGES += \
     wget \
     zip
 
+# Themes
+PRODUCT_PACKAGES += \
+    PixelTheme \
+    Stock
+
 # Custom off-mode charger
 ifneq ($(WITH_LINEAGE_CHARGER),false)
 PRODUCT_PACKAGES += \
