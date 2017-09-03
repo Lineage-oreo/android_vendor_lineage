@@ -325,6 +325,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.lineage.releasetype=$(LINEAGE_BUILDTYPE) \
     ro.lineage.build.version=$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR) \
     ro.modversion=$(LINEAGE_VERSION) \
+    ro.boot.vendor.overlay.theme=com.google.android.theme.pixel \
     ro.lineagelegal.url=https://lineageos.org/legal
 
 PRODUCT_EXTRA_RECOVERY_KEYS += \
