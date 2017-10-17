@@ -287,14 +287,14 @@ ifdef LINEAGE_BUILDTYPE
         endif
     endif
 else
-    # If LINEAGE_BUILDTYPE is not defined, set to UNOFFICIAL
-    LINEAGE_BUILDTYPE := UNOFFICIAL
+    # If LINEAGE_BUILDTYPE is not defined, set to BETA
+    LINEAGE_BUILDTYPE := BETA
     LINEAGE_EXTRAVERSION :=
 endif
 
-ifeq ($(LINEAGE_BUILDTYPE), UNOFFICIAL)
-    ifneq ($(TARGET_UNOFFICIAL_BUILD_ID),)
-        LINEAGE_EXTRAVERSION := -$(TARGET_UNOFFICIAL_BUILD_ID)
+ifeq ($(LINEAGE_BUILDTYPE), BETA)
+    ifneq ($(TARGET_BETA_BUILD_ID),)
+        LINEAGE_EXTRAVERSION := -$(TARGET_BETA_BUILD_ID)
     endif
 endif
 
@@ -337,7 +337,7 @@ LINEAGE_DISPLAY_VERSION := $(LINEAGE_VERSION)
 
 ifneq ($(PRODUCT_DEFAULT_DEV_CERTIFICATE),)
 ifneq ($(PRODUCT_DEFAULT_DEV_CERTIFICATE),build/target/product/security/testkey)
-    ifneq ($(LINEAGE_BUILDTYPE), UNOFFICIAL)
+    ifneq ($(LINEAGE_BUILDTYPE), BETA)
         ifndef TARGET_VENDOR_RELEASE_BUILD_ID
             ifneq ($(LINEAGE_EXTRAVERSION),)
                 # Remove leading dash from LINEAGE_EXTRAVERSION
